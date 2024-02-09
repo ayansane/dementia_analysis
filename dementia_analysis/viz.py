@@ -8,17 +8,18 @@ import seaborn as sns
 import numpy as np 
 
 
-def plot_distribution(df, col, title):
+def plot_distribution(df, col):
     """
     Plots the distribution of a specified column (e.g., age, test scores)
     Args: col1 - numeric column/Series, col2 - numeric column/Series
     Returns: tuple with test-statistic and p-value
     """
     if df[col].dtype == "object":
-        df[col].value_counts().sort_values().plot(kind="bar")
+        ax = df[col].value_counts().sort_values().plot(kind="bar")
+        ax.set_title(f"Bar Chart of {col}")
     else:
         ax = sns.histplot(df[col])
-        ax.set_title(title)
+        ax.set_title(f"Histogram of {col}")
 
 
 def plot_boxplot(df, col, group):
@@ -55,10 +56,6 @@ def scatter_plot(df, col1, col2):
     ax.set_xlabel(col1)
     ax.set_ylabel(col2)
     ax.set_title(f"Scatter Plot of {col1} by {col2}")
-    # plt.scatter(df[col1], df[col2])
-    # plt.title(f"Scatter Plot of {col1} by {col2}")
-    # plt.xlabel(col1)
-    # plt.ylabel(col2)
 
 
 plt.show()

@@ -32,7 +32,7 @@ def perform_anova(df, col, group):
 def calculate_correlation(df, col1, col2):
     """
     Calculates correlation coefficients between two continuous variables.
-    Args: col1 - numeric column/Series, col2 - numeric column/Series
+    Args: a data frame, col1 - numeric column/Series, col2 - numeric column/Series
     Returns: the correlation coefficient estimate
     """
     corr, _ = stats.pearsonr(df[col1], df[col2])
@@ -42,7 +42,7 @@ def calculate_correlation(df, col1, col2):
 def perform_regression(df, y, *args):
     """
     Conducts a linear regression analysis to explore relationships between variables.
-    Args: x_dat a numpy array with feature variables, y_label - a column/series
+    Args: a data frame, y_label - a column/series, and feature variables, seperated by a comma
     Returns: a summary table
     """
     col_list = []
@@ -50,5 +50,4 @@ def perform_regression(df, y, *args):
         col_list.append(name)
     x = df[col_list]
     model = sm.OLS(y, x).fit()
-    # results = model.fit()
     return model.summary()

@@ -50,10 +50,9 @@ scatter_plot(datarame, col1_from_df, col2_from_df)
 perform_ttest(column_1, column_2)
 ```
 
-7. perform_anova: Performs ANOVA to compare means across multiple groups. Takes in 3 or more numeric columns of the same length and returns the F-statistic and a p-value
+7. perform_anova: Performs ANOVA to compare means across multiple groups. Takes in a dataframe or more numeric columns of the same length and returns the F-statistic and a p-value
 ```
-perform_anova(column_1, column_2, column_3)
-perform_anova(column_1, column_2, column_3, column_4)
+perform_anova(dataframe, column, group_var)
 ```
 
 8. calculate_correlation: Calculates correlation coefficients between two continuous variables. Takes in 2 numeric columns of the same length and returns the correlation coefficient
@@ -61,7 +60,7 @@ perform_anova(column_1, column_2, column_3, column_4)
 calculate_correlation(column_1, column_2)
 ```
 
-9. perform_regression: Conducts a linear regression analysis to explore relationships between variables. Takes in a data matrix (x) which consists of feature variables and a column (y) vector/Series representing the label/outcome variable.
+9. perform_regression: Conducts a linear regression analysis to explore relationships between variables. Takes in a dataframe, a column (y) vector/Series representing the label/outcome variable, and as many feature variables as you like.
 ```
 perform_regression(x, y)
 ```
