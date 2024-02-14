@@ -15,7 +15,7 @@ from dementia_analysis.viz import (
 
 # %
 # %%
-file_path = "/https://github.com/pinheirochagas/mac_ai/blob/da2c6e3293668e76e01954d215746b2674c3673b/homework/hw1/simulated_cognitive_tests_dataset.csv"
+file_path = "/Users/alfayansane2/Documents/Computing/MachineLearning/MACOfficeHours/mac_ai/homework/hw1/simulated_cognitive_tests_dataset.csv"
 df = load_data(file_path)
 df.head()
 # %%
